@@ -10,6 +10,8 @@ The `stats` option lets you precisely control what bundle information gets displ
 
 T> For webpack-dev-server, this property needs to be in the `devServer` object.
 
+W> This option does not have any effect when using the Node.js API.
+
 ## `stats`
 
 `object` `string`
@@ -34,7 +36,7 @@ For more granular control, it is possible to specify exactly what information yo
 stats: {
   // Add asset Information
   assets: true,
-  // Sort assets by a filed
+  // Sort assets by a field
   assetsSort: "field",
   // Add information about cached (not built) modules
   cached: true,

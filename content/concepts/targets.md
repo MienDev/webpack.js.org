@@ -3,6 +3,7 @@ title: Targets
 sort: 10
 contributors:
   - TheLarkInn
+  - rouzbeh84
 ---
 
 Because JavaScript can be written for both server and browser, webpack offers multiple deployment _targets_ that you can set in your webpack [configuration](/configuration).
@@ -21,9 +22,11 @@ module.exports = {
 };
 ```
 
+In the example above, using `node` webpack will compile for usage in a Node.js-like environment (uses Node.js `require` to load chunks and not touch any built in modules like `fs` or `path`).
+
 Each _target_ has a variety of deployment/environment specific additions, support to fit its needs. See what [targets are available](/configuration/target).
 
-?> We should expand on this further. What specifically is included.
+?>Further expansion for other popular target values
 
 ## Multiple Targets
 

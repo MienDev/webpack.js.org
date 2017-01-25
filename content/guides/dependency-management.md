@@ -3,6 +3,7 @@ title: Dependency Management
 sort: 6
 contributors:
   - ndelangen
+  - chrisVillanueva
 ---
 
 > es6 modules
@@ -80,18 +81,18 @@ The exported function has 3 properties: `resolve`, `keys`, `id`.
   This can be useful if you want to require all files in a directory or matching a pattern, Example:
 
   ```javascript
-function importAll (r) {
-  r.keys().forEach(r);
-}
-importAll(require.context('../components/', true, /\.js$/));
+  function importAll (r) {
+    r.keys().forEach(r);
+  }
+  importAll(require.context('../components/', true, /\.js$/));
   ```
 
   ```javascript
-var cache = {};
-function importAll (r) {
-  r.keys().forEach(key => cache[key] = r(key));
-}
-importAll(require.context('../components/', true, /\.js$/));
-// At build-time cache will be polulated with all required modules.
+  var cache = {};
+  function importAll (r) {
+    r.keys().forEach(key => cache[key] = r(key));
+  }
+  importAll(require.context('../components/', true, /\.js$/));
+  // At build-time cache will be populated with all required modules.
   ```
 - `id` is the module id of the context module. This may be useful for `module.hot.accept`.
